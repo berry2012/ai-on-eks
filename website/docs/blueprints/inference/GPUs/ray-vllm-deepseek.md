@@ -96,10 +96,9 @@ kubectl get nodes
 ```
 
 ```text
-NAME                                           STATUS   ROLES    AGE    VERSION
-ip-100-64-118-130.us-west-2.compute.internal   Ready    <none>   3h9m   v1.30.0-eks-036c24b
-ip-100-64-127-174.us-west-2.compute.internal   Ready    <none>   9h     v1.30.0-eks-036c24b
-ip-100-64-132-168.us-west-2.compute.internal   Ready    <none>   9h     v1.30.0-eks-036c24b
+NAME                                          STATUS   ROLES    AGE     VERSION
+ip-100-64-233-25.us-west-2.compute.internal   Ready    <none>   9m22s   v1.34.1-eks-113cf36
+ip-100-64-34-142.us-west-2.compute.internal   Ready    <none>   9m26s   v1.34.1-eks-113cf36
 ```
 
 Verify the Karpenter autosclaer Nodepools
@@ -109,9 +108,13 @@ kubectl get nodepools
 ```
 
 ```text
-NAME                NODECLASS
-g5-gpu-karpenter    g5-gpu-karpenter
-x86-cpu-karpenter   x86-cpu-karpenter
+NAME          NODECLASS     NODES   READY   AGE
+g5-nvidia     g5-nvidia     0       True    5m57s
+g6-nvidia     g6-nvidia     0       True    5m57s
+g6e-nvidia    g6e-nvidia    0       True    5m57s
+inf2-neuron   inf2-neuron   0       True    5m57s
+m6i-cpu       m6i-cpu       0       True    5m57s
+trn1-neuron   trn1-neuron   0       True    5m57s
 ```
 
 Verify the NVIDIA Device plugin
